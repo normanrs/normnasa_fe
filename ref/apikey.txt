@@ -1,0 +1,3 @@
+"email": "sweather@example.com"
+"password": "password"
+"api_key": "c285c002a6acdcd586b5d0ab93"
