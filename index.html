@@ -22,7 +22,7 @@
             <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
           </div>
           <div class="col-md-3 padding-0">
-            <span class="favorites hide" id="favs"><button type="button" class="btn btn-info btn-sm" role="button" title="Favorites" id="favsButton" onclick="getFavorites()" >Favorites</button></span>
+            <span class="favorites hide" id="favs"><button type="button" class="btn btn-info btn-sm" role="button" title="Favorites" id="favsButton" data-toggle="modal" data-target="#modal3" onclick="getFavorites()" >Favorites</button></span>
             <span class="logins show" id="logins"><button type="button" class="btn btn-default btn-sm" role="button" title="Login" id="loginButton" data-toggle="modal" data-target="#modal2" >Login</button>
               <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button></span>
           </div>
@@ -84,20 +84,12 @@
     	</div>
     </div>
   </div>
-  <div class="jumbotron favorites hide" id="favorites">
-    <div class="container-fluid">
-      <div class="row">
-      <span class="bigbold">Favorites</span>
-      <div id="favLocation"></div>
-      </div>
-    </div>
-  </div>
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Register with Norm NASA</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="hideModal()">
           <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -127,7 +119,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Sign In to Norm NASA</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="hideModal()">
           <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -148,6 +140,28 @@
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal" onClick="hideModals()">Close</button>
           <a class="btn" onclick="login()">Submit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Your Favorites</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="hideModal()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <span id="favLocation"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onClick="hideModals()">Close</button>
         </div>
       </div>
     </div>
