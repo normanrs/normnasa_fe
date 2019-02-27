@@ -12,18 +12,28 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-center">
-      <h1> <span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
-      <span><input type="text" pattern="[a-zA-Z,]*" id="newSearch" class="light" placeholder="search" >
-      <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
-      <button type"button" id="clearBtn" class="btn btn-primary btn-sm" role="button" title="Clear search field" onclick="aClear()">Clear</button>
-      <button type="button" class="btn btn-secondary btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button></span>
+      <h1><span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 padding-0">
+          </div>
+          <div class="col-md-6 padding-0">
+            <input type="search" pattern="[^'\x22]+" id="newSearch" class="light" placeholder="search" >
+            <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
+          </div>
+          <div class="col-md-3 padding-0">
+            <span class="logins show" id="logins"><button type="button" class="btn btn-default btn-sm" role="button" title="Login" id="loginButton" data-toggle="modal" data-target="#modal2" >Login</button>
+              <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button></span>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="jumbotron">
     <div class="container">
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText1"></span>
+        <span class="bigbold" class="bigbold" id="tweetText1"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -31,10 +41,9 @@
         <span id="currentGif1" ></span>
         </div>
     	</div>
-      <span id="divider" class="divider" ></span>
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText2"></span>
+        </br><span class="bigbold" id="tweetText2"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -42,10 +51,9 @@
         <span id="currentGif2" ></span>
         </div>
     	</div>
-      <span id="divider" class="divider" ></span>
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText3"></span>
+        </br><span class="bigbold" id="tweetText3"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -53,10 +61,9 @@
         <span id="currentGif3" ></span>
         </div>
     	</div>
-      <span id="divider" class="divider" ></span>
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText4"></span>
+        </br><span class="bigbold" id="tweetText4"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -64,10 +71,9 @@
         <span id="currentGif4" ></span>
         </div>
     	</div>
-      <span id="divider" class="divider" ></span>
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText5"></span>
+        </br><span class="bigbold" id="tweetText5"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -75,7 +81,68 @@
         <span id="currentGif5" ></span>
         </div>
     	</div>
-      <span id="divider" class="divider" ></span>
+    </div>
+  </div>
+  <div class="container favorite-hide" id="favorite">
+  </div>
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Register with Norm NASA</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="email" id="signupEmail" class="edit"></br>
+              Email</br><br>
+              <span id="emailAlert"></span>
+            </div>
+            <div class="col-md-6">
+              <input type="password" id="signupPassword" class="edit"></br>
+              Password</br><br>
+              <span id="pwdAlert"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onClick="hideModals()">Close</button>
+          <a class="btn" onclick="signup()">Submit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign In to Norm NASA</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="email" id="loginEmail" class="edit"></br>
+              Email</br><br>
+              <span id="emailAlert"></span>
+            </div>
+            <div class="col-md-6">
+              <input type="password" id="loginPassword" class="edit"></br>
+              Password</br><br>
+              <span id="pwdAlert"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onClick="hideModals()">Close</button>
+          <a class="btn" onclick="login()">Submit</a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
