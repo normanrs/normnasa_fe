@@ -16,18 +16,23 @@
       <span>
       <input type="search" pattern="[^'\x22]+" id="newSearch" class="light" placeholder="search" >
       <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
-      <button type"button" id="clearBtn" class="btn btn-primary btn-sm" role="button" title="Clear search field" onclick="aClear()">Clear</button>
       <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="emailLogin" class="light" placeholder="email" >
       <input type="password" pattern=".{6,}" id="pwdLogin" class="light" placeholder="password" >
-      <button type="button" class="btn btn-secondary btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button>
-    </span>
+      <button type="button" class="btn btn-default btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button>
+      <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button>
+     </span>
     </div>
   </nav>
   <div class="jumbotron">
     <div class="container">
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        </br><span id="tweetText1"></span>
+        <span id="signupBlock"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="tweetText1"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -80,6 +85,38 @@
         </div>
     	</div>
       <span id="divider" class="divider" ></span>
+    </div>
+  </div>
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Food</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick="clearModal()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <input type="text" id="editFoodName" class="edit"></br>
+              Food Name</br><br>
+              Food Id: <span id="editFoodId"></span>
+            </div>
+            <div class="col-md-4">
+              <input type="number" id="editFoodCals" class="edit"></br>
+              Calories</br><br>
+              <span id="foodEdited"></span>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onClick="clearModal()">Close</button>
+          <a class="btn" onclick="saveFood()">Save Food</a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
