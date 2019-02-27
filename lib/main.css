@@ -50,7 +50,7 @@ body {
   font-size: 200%;
 }
 
-.favorite-hide {
+.hide {
   display: none !important;
   font-family: 'Open Sans';
 }

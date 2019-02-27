@@ -12,13 +12,21 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-center">
-      <h1> <span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
-      <span>
-      <input type="search" pattern="[^'\x22]+" id="newSearch" class="light" placeholder="search" >
-      <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
-      <button type="button" class="btn btn-default btn-sm" role="button" title="Login" id="loginButton" data-toggle="modal" data-target="#modal2" >Login</button>
-      <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button>
-     </span>
+      <h1><span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 padding-0">
+          </div>
+          <div class="col-md-6 padding-0">
+            <input type="search" pattern="[^'\x22]+" id="newSearch" class="light" placeholder="search" >
+            <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
+          </div>
+          <div class="col-md-3 padding-0">
+            <span class="logins show" id="logins"><button type="button" class="btn btn-default btn-sm" role="button" title="Login" id="loginButton" data-toggle="modal" data-target="#modal2" >Login</button>
+              <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button></span>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="jumbotron">
