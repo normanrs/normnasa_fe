@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-    <title>SWEATHER!</title>
+    <title>Norm Nasa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,136 +12,70 @@
 <body>
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-center">
-      <h1> <span id="title-1" class="nav navbar-nav navbar-center">Sweather! </span> <span id="title-2" class="nav navbar-nav navbar-center">[a weather app]</span></h1>
-      <span><input type="text" pattern="[a-zA-Z,]*" id="newLocation" class="light" placeholder="city,state" >
-      <a class="btn btn-primary btn-sm" role="button" title="Defaults to current location" onclick="getLocation()" >Submit</a>
-      <button type"button" id="clearBtn" class="btn btn-primary btn-sm" role="button" title="Clear entry and revert to default" onclick="aClear()">Clear</button>
-      <button type="button" class="btn btn-primary btn-sm" id="showfavBtn" role="button" title="Favorites will be displayed at the bottom of the page" onclick="showFavorites()" >Show Site Favorites</button></span>
+      <h1> <span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
+      <span><input type="text" pattern="[a-zA-Z,]*" id="newSearch" class="light" placeholder="search" >
+      <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
+      <button type"button" id="clearBtn" class="btn btn-primary btn-sm" role="button" title="Clear search field" onclick="aClear()">Clear</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button></span>
     </div>
   </nav>
   <div class="jumbotron">
-  	<div class="container forecast-hide" id="forecast">
-      <span id="currentLocation"></span><span id="dateAndTime"></span>
-      <div class="container">
-      	<div class="row">
-      		<div class="col-md-2">
-      		</div>
-      		<div class="col-md-2">
-            <big class="bigbold" id="currentTemp"></big></br>
-            <span id="highLow"></span>
-          </br><span id="feelsLike"></span>
-      		</div>
-      		<div class="col-md-4 padding-0">
-            </br><span id="humidity"></span>
-            <span id="uvIndex"></span>
-            <span id="visibility"></span></br>
-            <span id="dailySummary"></span></br>
-            <span id="hourlySummary"></span>
-      		</div>
-          <div class="col-md-2">
-          <iframe id="currentGif" frameBorder="0" class="giphy-embed" ></iframe>
-          </div>
-          <div class="col-md-2">
-          </div>
-      	</div>
-        <span id="divider" class="divider" ></span>
-      </div>
-      <div class="container">
-        <div class="row">
-          <h4>Forecast</h4>
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp1"></big></br>
-            <span id="hourlyTime1"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp2"></big></br>
-            <span id="hourlyTime2"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp3"></big></br>
-            <span id="hourlyTime3"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp4"></big></br>
-            <span id="hourlyTime4"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp5"></big></br>
-            <span id="hourlyTime5"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp6"></big></br>
-            <span id="hourlyTime6"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp7"></big></br>
-            <span id="hourlyTime7"></span>
-          </div>
-          <div class="col-md-1 padding-0">
-            <big class="bigbold" id="hourlyTemp8"></big></br>
-            <span id="hourlyTime8"></span>
-          </div>
-          <div class="col-md-2">
-          </div>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        </br><span id="tweetText1"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="currentGif1" ></span>
         </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8 padding-0">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Date</th>
-                  <th scope="col">Summary</th>
-                  <th scope="col">Precip</th>
-                  <th scope="col">High/Low</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"><div class="left" id="dailyDay1"></div></th>
-                  <td class="left"><div class="left" id="dailySummary1"></div></td>
-                  <td class="left"><div class="left" id="dailyChance1"></div></td>
-                  <td class="left"><div class="left" id="dailyHighLow1"></div></td>
-                </tr>
-                <tr>
-                  <th scope="row"><div class="left" id="dailyDay2"></div></th>
-                  <td class="left"><div class="left" id="dailySummary2"></div></td>
-                  <td class="left"><div class="left" id="dailyChance2"></div></td>
-                  <td class="left"><div class="left" id="dailyHighLow2"></div></td>
-                </tr>
-                <tr>
-                  <th scope="row"><div class="left" id="dailyDay3"></div></th>
-                  <td class="left"><div class="left" id="dailySummary3"></div></td>
-                  <td class="left"><div class="left" id="dailyChance3"></div></td>
-                  <td class="left"><div class="left" id="dailyHighLow3"></div></td>
-                </tr>
-                <tr>
-                  <th scope="row"><div class="left" id="dailyDay4"></div></th>
-                  <td class="left"><div class="left" id="dailySummary4"></div></td>
-                  <td class="left"><div class="left" id="dailyChance4"></div></td>
-                  <td class="left"><div class="left" id="dailyHighLow4"></div></td>
-                </tr>
-                <tr>
-                  <th scope="row"><div class="left" id="dailyDay5"></div></th>
-                  <td class="left"><div class="left" id="dailySummary5"></div></td>
-                  <td class="left"><div class="left" id="dailyChance5"></div></td>
-                  <td class="left"><div class="left" id="dailyHighLow5"></div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    	</div>
+      <span id="divider" class="divider" ></span>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        </br><span id="tweetText2"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="currentGif2" ></span>
         </div>
-        <div class="col-md-2">
+    	</div>
+      <span id="divider" class="divider" ></span>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        </br><span id="tweetText3"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="currentGif3" ></span>
         </div>
-      </div>
-  	</div>
-  </div>
-   <div class="container-fluid">
-    <div class="row favorites">
-      <div id="favLocation"></div>
+    	</div>
+      <span id="divider" class="divider" ></span>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        </br><span id="tweetText4"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="currentGif4" ></span>
+        </div>
+    	</div>
+      <span id="divider" class="divider" ></span>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        </br><span id="tweetText5"></span>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-12 padding-0">
+        <span id="currentGif5" ></span>
+        </div>
+    	</div>
+      <span id="divider" class="divider" ></span>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
