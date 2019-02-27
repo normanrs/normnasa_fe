@@ -22,7 +22,7 @@
             <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
           </div>
           <div class="col-md-3 padding-0">
-            <span class="favorites hide" id="favoritesButton"><button type="button" class="btn btn-info btn-sm" role="button" title="Favorites" id="favsButton" data-toggle="modal" data-target="#modal2" >Favorites</button></span>
+            <span class="favorites hide" id="favs"><button type="button" class="btn btn-info btn-sm" role="button" title="Favorites" id="favsButton" onclick="getFavorites()" >Favorites</button></span>
             <span class="logins show" id="logins"><button type="button" class="btn btn-default btn-sm" role="button" title="Login" id="loginButton" data-toggle="modal" data-target="#modal2" >Login</button>
               <button type="button" class="btn btn-success btn-sm" role="button" title="Signup" id="signupButton" data-toggle="modal" data-target="#modal1" >Signup</button></span>
           </div>
@@ -34,7 +34,7 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-12 padding-0">
-        <span class="bigbold" class="bigbold" id="tweetText1"></span>
+        <span class="bigbold" id="tweetText1"></span>
     		</div>
     	</div>
     	<div class="row">
@@ -84,7 +84,13 @@
     	</div>
     </div>
   </div>
-  <div class="container favorite-hide" id="favorite">
+  <div class="jumbotron favorites hide" id="favorites">
+    <div class="container-fluid">
+      <div class="row">
+      <span class="bigbold">Favorites</span>
+      <div id="favLocation"></div>
+      </div>
+    </div>
   </div>
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
