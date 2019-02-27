@@ -50,32 +50,7 @@ body {
   font-size: 200%;
 }
 
-.forecast-hide {
+.favorite-hide {
   display: none !important;
-  font-family: 'Open Sans';
-}
-
-.divider-show {
-  display: block !important;
-  text-align: inherit;
-  font-family: 'Open Sans';
-}
-
-.divider {
-  display: block !important;
-  flex-grow: 1;
-  width: 65%;
-  height: 2px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom:0px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-  text-align: inherit;
-  font-family: inherit;
-}
-
-.left {
-  text-align: left;
   font-family: 'Open Sans';
 }
