@@ -13,10 +13,14 @@
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-center">
       <h1> <span id="title-1" class="nav navbar-nav navbar-center">Norm Nasa </span> <span id="title-2" class="nav navbar-nav navbar-center">NASA pics of the day</span></h1>
-      <span><input type="text" pattern="[a-zA-Z,]*" id="newSearch" class="light" placeholder="search" >
+      <span>
+      <input type="search" pattern="[^'\x22]+" id="newSearch" class="light" placeholder="search" >
       <a class="btn btn-primary btn-sm" role="button" title="Enter search words" onclick="getSearch()" >Submit</a>
       <button type"button" id="clearBtn" class="btn btn-primary btn-sm" role="button" title="Clear search field" onclick="aClear()">Clear</button>
-      <button type="button" class="btn btn-secondary btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button></span>
+      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="emailLogin" class="light" placeholder="email" >
+      <input type="password" pattern=".{6,}" id="pwdLogin" class="light" placeholder="password" >
+      <button type="button" class="btn btn-secondary btn-sm" id="showfavBtn" role="button" title="Login with your email and password" onclick="showFavorites()" >Login</button>
+    </span>
     </div>
   </nav>
   <div class="jumbotron">
